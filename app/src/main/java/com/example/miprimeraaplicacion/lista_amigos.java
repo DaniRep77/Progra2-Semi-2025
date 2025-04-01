@@ -56,6 +56,7 @@ public class lista_amigos extends Activity {
         fab.setOnClickListener(view -> abriVentana());
         listarDatos();
         buscarAmigos();
+
     }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {

@@ -8,6 +8,7 @@ public class detectarInternet {
     private Context context;
     public detectarInternet(Context context){
         this.context = context;
+
     }
     public boolean hayConexionInternet(){
         ConnectivityManager connectivityManager =

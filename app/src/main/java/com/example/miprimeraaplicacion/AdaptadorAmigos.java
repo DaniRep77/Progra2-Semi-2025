@@ -39,6 +39,7 @@ public class AdaptadorAmigos extends BaseAdapter {
         return 0;
     }
 
+    
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
