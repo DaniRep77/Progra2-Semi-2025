@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+
 public class lista_amigos extends Activity {
     Bundle parametros = new Bundle();
     ListView ltsAmigos;
