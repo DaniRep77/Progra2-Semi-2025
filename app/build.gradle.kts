@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.miprimeraaplicacion"
+    namespace = "com.ugb.miprimeraaplicacion"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.miprimeraaplicacion"
+        applicationId = "com.ugb.miprimeraaplicacion"
         minSdk = 23
         targetSdk = 35
         versionCode = 1
@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
