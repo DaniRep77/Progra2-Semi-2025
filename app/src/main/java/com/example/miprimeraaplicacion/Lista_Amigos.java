@@ -15,16 +15,21 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
+
 public class Lista_Amigos extends Activity {
     Bundle parametros = new Bundle();
     ListView ltsAmigos;
@@ -43,8 +48,10 @@ public class Lista_Amigos extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_amigos);
+
         parametros.putString("accion", "nuevo");
         db = new DB(this);
+
         fab = findViewById(R.id.fabAgregarAmigo);
         fab.setOnClickListener(view -> abriVentana());
         listarDatos();
@@ -173,6 +180,7 @@ public class Lista_Amigos extends Activity {
                 ltsAmigos = findViewById(R.id.ltsAmigos);
                 alAmigos.clear();
                 alAmigosCopia.clear();
+
                 for (int i=0; i<jsonArray.length(); i++){
                     jsonObject = jsonArray.getJSONObject(i).getJSONObject("value");
                     misAmigos = new amigos(
@@ -203,6 +211,7 @@ public class Lista_Amigos extends Activity {
         tempVal.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -223,6 +232,7 @@ public class Lista_Amigos extends Activity {
             }
             @Override
             public void afterTextChanged(Editable s) {
+
             }
         });
     }

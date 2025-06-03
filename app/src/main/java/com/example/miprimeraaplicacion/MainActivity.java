@@ -14,20 +14,23 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton ;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONObject;
 import org.w3c.dom.Text;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     Button btn;
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         fab = findViewById(R.id.fabListaAmigos);
         fab.setOnClickListener(view->abrirVentana());
+
         mostrarDatos();
         tomarFoto();
     }
@@ -77,16 +81,22 @@ public class MainActivity extends AppCompatActivity {
                 id = datos.getString("_id");
                 rev = datos.getString("_rev");
                 idAmigo = datos.getString("idAmigo");
+
                 tempVal = findViewById(R.id.txtNombre);
                 tempVal.setText(datos.getString("nombre"));
+
                 tempVal = findViewById(R.id.txtDireccion);
                 tempVal.setText(datos.getString("direccion"));
+
                 tempVal = findViewById(R.id.txtTelefono);
                 tempVal.setText(datos.getString("telefono"));
+
                 tempVal = findViewById(R.id.txtEmail);
                 tempVal.setText(datos.getString("email"));
+
                 tempVal = findViewById(R.id.txtDui);
                 tempVal.setText(datos.getString("dui"));
+
                 urlCompletaFoto = datos.getString("urlFoto");
                 img.setImageURI(Uri.parse(urlCompletaFoto));
             }else {
@@ -115,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -129,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             mostrarMsg("Error: "+e.getMessage());
         }
     }
+
     private File crearImagenAmigo() throws Exception{
         String fechaHoraMs = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()),
                 fileName = "imagen_"+ fechaHoraMs+"_";
@@ -151,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             tempVal = findViewById(R.id.txtNombre);
             String nombre = tempVal.getText().toString();
+
             tempVal = findViewById(R.id.txtDireccion);
             String direccion = tempVal.getText().toString();
 
@@ -183,6 +196,9 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
             mostrarMsg("Error: "+e.getMessage());
         }
+    }
+
+    private class FloatingActionButton {
     }
 }
 
